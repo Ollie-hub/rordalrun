@@ -1,8 +1,9 @@
 import React, { useEffect, useState }  from "react"; 
 import { useParams } from 'react-router-dom';
 import '../distancer/distancer.scss'
+import Banner from '../../components/banner/banner'
 
-function DenLange() {
+function Distancer() {
     const [data, setData] = useState({});
     const {id} = useParams()
 
@@ -20,6 +21,7 @@ function DenLange() {
     //Data
     return (
       <>
+            <Banner></Banner>
             <div key={data.id}>
             <h3 className="distance-title">{data.title}</h3>
             <div className="distance-content">{data.description}</div>
@@ -31,4 +33,4 @@ function DenLange() {
 
 
 
-export default DenLange; 
+export default Distancer; 

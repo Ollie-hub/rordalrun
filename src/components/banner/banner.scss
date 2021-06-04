@@ -1,0 +1,11 @@
+@import '../../style/App.scss';
+
+.hero {
+    width: 100%;
+    height: 586px;
+    background-color: green;
+    .bannerpicture {
+        background-image: url(../../assets/images/COLOURBOX8294699.JPG);
+    }
+    
+}

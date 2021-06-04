@@ -1,29 +1,25 @@
-import Distancer from "./pages/distancer/distancer"
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import {  BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './style/App.scss';
+import SideNavbar from "./components/Navbar/Navbar";
+import Forside from './pages/forside/forside'
+import Distancer from "./pages/distancer/distancer"
+import Deltagerliste from "./pages/deltagerliste/deltagerliste"
+import Tilmelding from "./pages/tilmelding/tilmelding";
+import Login from "./pages/takfortilmelding/takfortilmelding";
 
 function App() {
   return (
     <Router>
+      <SideNavbar/>
       <Switch>
-        <Route exact path="/distancer">
-          <Link to="/distancer/1">Den Lange</Link>
-          <Link to="/distancer/2">Stafetten</Link>
+        <Route exact path='/' component={Forside} />
+        <Route path='/om' component={Deltagerliste} />
+        <Route path='/distancer' component={Distancer}> 
         </Route>
-        <Route exact path="/distancer/:id">
-           <Distancer/>
-        </Route>
-        <Route path="/">
-          <Link to="/forside">Forside</Link>
-          <Link to="/distancer">Distancer</Link> 
-          <Link to="/distancer/1">Den Lange</Link> 
-        </Route>s
+        
+        <Route path='/tilmelding' component={Tilmelding} />
+        <Route path='/login' component={Login} />
       </Switch>
   </Router>
 );
